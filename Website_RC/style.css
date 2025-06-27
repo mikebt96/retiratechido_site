@@ -1,0 +1,785 @@
+/* General */
+:root {
+    --primary-bg-gradient: linear-gradient(120deg, #1a237e, #5e35b1, #1de9b6);
+    --text-color: #F5F5F5;
+    --accent-color: #FEEA00;
+    --secondary-accent-color: #69F0AE;
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(31, 38, 135, 0.37);
+    --glass-shadow-hover: rgba(31, 38, 135, 0.6);
+    --border-radius: 20px;
+    --transition-time: 0.3s;
+    --transition-ease: ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color);
+    background: var(--primary-bg-gradient);
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Glassmorphism Class */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-time) var(--transition-ease),
+                box-shadow var(--transition-time) var(--transition-ease);
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+   
+    box-shadow: 0 12px 48px 0 var(--glass-shadow-hover);
+}
+.glass-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.primary-btn {
+    background-color: var(--accent-color);
+    color: #333;
+}
+
+.btn.secondary-btn {
+    background-color: var(--secondary-accent-color);
+    color: #333;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn.small-btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+
+/* Header and Navigation */
+header {
+    background-color: transparent;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px var(--glass-shadow);
+}
+
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.desktop-nav ul li {
+    margin-left: 30px;
+}
+
+.desktop-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.desktop-nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+.mobile-nav-overlay.active {
+    transform: translateX(0);
+}
+
+.mobile-nav-overlay .close-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.mobile-nav-overlay ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-overlay ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav-overlay ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+.glass-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.course-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.course-card p {
+    margin-bottom: 1.5rem;
+}
+
+.solution-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.solution-card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.solution-card h3 {
+    font-size: 1.5rem;
+}
+
+.retirement-section {
+    text-align: center;
+}
+
+.retirement-section p {
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Contact Form */
+.contact-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(254, 234, 0, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer-nav ul li {
+    margin: 0 15px;
+}
+
+.footer-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        margin: 0;
+        width: 100%;
+    }
+
+    .glass-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .solution-card {
+        padding: 1.5rem;
+    }
+
+    .solution-card i {
+        font-size: 2.5rem;
+    }
+
+    .solution-card h3 {
+        font-size: 1.3rem;
+    }
+
+    footer .container {
+        flex-direction: column;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .mobile-nav-overlay ul li a {
+        font-size: 1.2rem;
+    }
+
+    .close-menu {
+        font-size: 1.8rem !important;
+    }
+}
+
+
+
+/* New Page General Styles */
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+}
+
+/* Form Section Styles (for Register and Login) */
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 180px); /* Adjust based on header/footer height */
+    padding: 80px 0;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.auth-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(254, 234, 0, 0.3);
+}
+
+.auth-form .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.auth-form .checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.auth-form .link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-form .link:hover {
+    text-decoration: underline;
+}
+
+.auth-form .form-link {
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+/* Courses Page Specific Styles */
+.courses-section .course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Entrepreneur Page Specific Styles */
+.entrepreneur-section .solution-card i {
+    font-size: 3.5rem;
+}
+
+.entrepreneur-section .cta-block {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.entrepreneur-section .cta-block h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.entrepreneur-section .cta-block p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Retirement Page Specific Styles */
+.retirement-section .feature-card i {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.retirement-section .feature-card {
+    text-align: center;
+}
+
+.retirement-section .cta-block ul {
+    list-style: none;
+    text-align: left;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.retirement-section .cta-block ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.retirement-section .cta-block ul li strong {
+    color: var(--accent-color);
+}
+
+.faq-section {
+    margin-top: 4rem;
+}
+
+.faq-section .faq-item {
+    text-align: left;
+}
+
+.faq-section .faq-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.faq-section .faq-item p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    display: none; /* Hidden by default, will be toggled by JS */
+}
+
+.faq-section .faq-item.active p {
+    display: block;
+}
+
+/* About Page Specific Styles */
+.about-section .about-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-section .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 0 5px rgba(254, 234, 0, 0.3);
+}
+
+.about-section .about-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-section .about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-section .testimonials-section {
+    margin-top: 4rem;
+}
+
+.about-section .testimonial-card {
+    text-align: center;
+}
+
+.about-section .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.about-section .testimonial-card .author {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* Responsive Adjustments for new pages */
+@media (max-width: 768px) {
+    .form-section {
+        min-height: auto;
+        padding: 50px 0;
+    }
+
+    .auth-form {
+        padding: 1.5rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .entrepreneur-section .cta-block h3 {
+        font-size: 1.5rem;
+    }
+
+    .retirement-section .cta-block ul {
+        padding-left: 20px;
+    }
+
+    .about-section .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-section .about-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-section .about-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-form {
+        padding: 1rem;
+    }
+
+    .auth-form input, .auth-form button {
+        font-size: 0.9rem;
+    }
+
+    .auth-form .form-link {
+        font-size: 0.85rem;
+    }
+
+    .courses-section .course-image {
+        height: 150px;
+    }
+
+    .entrepreneur-section .solution-card i,
+    .retirement-section .feature-card i {
+        font-size: 2.5rem;
+    }
+
+    .faq-section .faq-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .faq-section .faq-item p {
+        font-size: 0.9rem;
+    }
+}
+@media (prefers-reduced-transparency: reduce), (max-width: 480px) {
+    .glass-card {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.35);
+    }
+}
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform var(--transition-time) var(--transition-ease);
+}
+.mobile-nav-overlay.active {
+    transform: translateX(0);
+}
+.mobile-nav-overlay .close-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* Video Background Styles */
+
+.video-container {
+    position: relative; 
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+#miVideoFondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;
+}
+
+/* Estilos para el contenido que va encima del video */
+.contenido-superpuesto {
+    position: relative;
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+    text-align: center;
+    padding: 20px;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html> <!---->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retírate Chido</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop id="miVideoFondo">
+            <source src="AdobeStock_1514148152_Video_HD_Preview.mov" type="video/mp4">    
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="video-overlay"></div>
+
+        <div class="video-content glass-card" style="position: absolute; 
+            top: 50%; left: 25%; 
+            transform: translate(-50%, -50%); 
+            text-align: center; 
+            z-index: 2; 
+            max-width: 450px;
+            height: 600px; 
+            width: 90%;">
+            <h1 style="margin-bottom: 16px;">Retírate Chido</h1>
+            <p style="margin-bottom: 24px;">Domina las finanzas de tu negocio y planea un futuro increíble.</p>
+            <a href="#cursos" class="btn primary-btn" style="margin-bottom: 8px;">Ver Cursos</a>
+            <br>
+            <a href="#contact" class="btn secondary-btn">Solicita Asesoría Gratis</a>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            
+            <img src="LOGOCHANGO.svg" alt="Logo de Retírate Chido" style="max-height: 125px; vertical-align: middle;">
+                
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="courses.html">Cursos</a></li>
+                    <!--<li><a href="entrepreneurs.html">Para Emprendedores</a></li>-->
+                    <!--<li><a href="retirement.html">Plan de Retiro</a></li>-->
+                    <li><a href="about.html">Sobre Mí</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="login.html">Iniciar Sesión</a></li>
+                    <!--<li><a href="register.html">Registrarse</a></li>-->
+                </ul>
+            </nav>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav-overlay">
+        <div class="close-menu"><i class="fas fa-times"></i></div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="courses.html">Cursos</a></li>
+            <!--<li><a href="entrepreneurs.html">Para Emprendedores</a></li>-->
+            <!--<li><a href="retirement.html">Plan de Retiro</a></li>-->
+            <li><a href="about.html">Sobre Mí</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <!--<li><a href="register.html">Registrarse</a></li>-->
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>De emprendedor a empresario. Domina las finanzas de tu negocio y retírate chido.</h1>
+                <p>Cursos, herramientas y asesoría para que arranques, formalices y hagas crecer tu negocio mientras planeas un futuro increíble.</p>
+                <div class="hero-buttons">
+                    <a href="#cursos" class="btn primary-btn">Ver Cursos</a>
+                    <a href="#contact" class="btn secondary-btn">Asesoría para Negocios</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cursos" class="courses-section">
+            <div class="container">
+                <h2>Cursos Populares</h2>
+                <div class="glass-card-grid">
+                    <div class="glass-card course-card">
+                        <h3>Finanzas para Emprender de Cero</h3>
+                        <p>Aprende a manejar el dinero de tu negocio desde el inicio.</p>
+                        <a href="#" class="btn small-btn">Saber más</a>
+                    </div>
+                    <div class="glass-card course-card">
+                        <h3>El SAT sin miedo</h3>
+                        <p>Descomplica tus obligaciones fiscales y evita problemas.</p>
+                        <a href="#" class="btn small-btn">Saber más</a>
+                    </div>
+                    <div class="glass-card course-card">
+                        <h3>Plan de Retiro 101</h3>
+                        <p>Todo lo que necesitas saber para asegurar tu futuro financiero.</p>
+                        <a href="#" class="btn small-btn">Saber más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="emprendedores" class="entrepreneur-section">
+            <div class="container">
+                <h2>Soluciones para tu Negocio</h2>
+                <div class="glass-card-grid">
+                    <div class="glass-card solution-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Arranca tu Idea</h3>
+                    </div>
+                    <div class="glass-card solution-card">
+                        <i class="fas fa-building"></i>
+                        <h3>Optimiza tu PYME</h3>
+                    </div>
+                    <div class="glass-card solution-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Finanzas para Pros</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="retiro" class="retirement-section">
+            <div class="container">
+                <h2>¿Pensando en tu futuro? Asegúralo hoy.</h2>
+                <p>Como tu agente GNP certificado, te guiaré paso a paso para encontrar el Plan Personal de Retiro (PPR) perfecto para ti, con beneficios fiscales y un futuro tranquilo.</p>
+                <a href="#contact" class="btn primary-btn">Agendar Asesoría Gratis</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contacto</h2>
+                <form class="glass-card contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="btn primary-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Retírate Chido. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="courses.html">Cursos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="login.html">Iniciar Sesión</a></li>
+                    <li><a href="register.html">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
